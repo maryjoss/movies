@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="misPelisSeriesApp">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Peliculas y series</title>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.js"></script>
+    <script src="vendor/angular-route-segment.js"></script>
+    <script src="vendor/angular-locale_es-es.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/peliculasCtrl.js"></script>
+    <script src="scripts/controllers/seriesCtrl.js"></script>
+    <script src="scripts/controllers/navCtrl.js"></script>
+    <script src="scripts/controllers/peliculasProximamenteCtrl.js"></script>
+    <script src="scripts/controllers/peliculasCarteleraCtrl.js"></script>
+    <script src="scripts/controllers/seriesHoyCtrl.js"></script>
+    <script src="scripts/controllers/seriesEmisionCtrl.js"></script>
+    <script src="scripts/controllers/peliculasDetallesCrtl.js"></script>
+    <script src="scripts/services/apiService.js"></script>
+    <script src="scripts/values/settings.js"></script>
+    <script src="scripts/filters/fechaEstreno.js"></script>
+    <script src="scripts/directives/Media.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Películas y Series</h1>
+        </header>
+        <nav ng-controller="navCtrl">
+            <ul class="nav nav-tabs">
+                <li ng-class="{ 'active': rutaEsPelicula() }">
+                    <a href="#/peliculas">Peliculas</a>
+                </li>
+                <li ng-class="{ 'active': rutaEsSeries() }">
+                    <a href="#/series">Series</a>
+                </li>
+            </ul>
+        </nav>
+        <section app-view-segment="0"></section>
+    </div>
+</body>
+
+</html>
